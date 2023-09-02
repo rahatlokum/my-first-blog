@@ -16,4 +16,5 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-# small condition for test
+# small condition for test 
+# random things
