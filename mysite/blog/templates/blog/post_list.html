@@ -1,13 +1,64 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
-    {% for post in posts %}
-        <article class="post">
-            <time class="date">
-                {{ post.published_date }}
-            </time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </article>
-    {% endfor %}
+
+  <div class="photo">
+    <img src="{% static 'media/doctor.jpg' %}" alt="Doctor Photo">
+    <div class="overlay-text">
+      <div class="left-block">
+        <h1>Почему медицинское тестирование имеет значение…</h1>
+        <h2>ПРО НАС</h2>
+        <h3>"Быстро, вежливо & так дешево!”</h3>
+        <p class="text">
+          Учитывая, насколько хрупко наше здоровье как вида и насколько важно выявлять болезни как можно раньше, 
+          мы пришли к выводу, что хорошая лаборатория для клинических испытаний – это то, в чем мы сейчас нуждаемся больше всего!
+        </p>
+      </div>
+      <div class="right-block">
+        <h1>Виды тестов</h1>
+        <h2>ЧТО МЫ ПРЕДЛАГАЕМ</h2>
+        <div class="test-headers">
+          <h4 id="narcoTestsHeader" class="test-header active" onclick="showText(0)">НАРКО-ТЕСТЫ</h4>
+          <h4 id="zpppHeader" class="test-header" onclick="showText(1)">ЗППП</h4>
+        </div>
+        <div class="test-texts">
+          <p id="narcoTestsText" class="text2 active">Помимо множества других типов тестов, мы также предлагаем натуропатические медицинские тесты. Он включает анализ волос и мочи на элементы, гормон роста мочи, витамин D в пятнах крови, кортизол волос, анализ на гормоны слюны и т. д.</p>
+          <p id="zpppText" class="text2">В современном мире более сексуально активная молодежь приводит к большему количеству заболеваний, передающихся половым путем. Чтобы убедиться, что вы не попали в эту статистику, проверьте себя в нашей клинике!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var narcoTestsHeader = document.getElementById('narcoTestsHeader');
+      var zpppHeader = document.getElementById('zpppHeader');
+      var narcoTestsText = document.getElementById('narcoTestsText');
+      var zpppText = document.getElementById('zpppText');
+  
+      // Скрыть текст ZPPP при загрузке страницы
+      zpppText.style.display = 'none';
+  
+      // Установить активным заголовок по умолчанию
+      narcoTestsHeader.classList.add('active');
+  
+      // Переключение текста при клике на ZPPP
+      zpppHeader.addEventListener('click', function () {
+        narcoTestsText.style.display = 'none';
+        zpppText.style.display = 'block';
+        zpppHeader.classList.add('active');
+        narcoTestsHeader.classList.remove('active');
+      });
+  
+      // Переключение текста при клике на Narco-Tests
+      narcoTestsHeader.addEventListener('click', function () {
+        narcoTestsText.style.display = 'block';
+        zpppText.style.display = 'none';
+        narcoTestsHeader.classList.add('active');
+        zpppHeader.classList.remove('active');
+      });
+    });
+  </script>
+
 {% endblock %}

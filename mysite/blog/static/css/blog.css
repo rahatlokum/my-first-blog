@@ -1,109 +1,130 @@
-.page-header {
-  background-color: rgb(6, 39, 58);
-  margin-top: 0;
-  padding: 35px;
-  color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: Garamond Light;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@300&display=swap');
 
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: normal;
-}
-
-/* -------- menu -------- */
-
-.menu {
-  font-family: Verdana  ;
-}
-
-.menu a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.menu a:hover {
-  color: grey;
-  transition: color 0.3s;
-}
-
-/* -------- end menu -------- */
-
-/* -------- account -------- */
-
-.account {
-  margin-right: -300px;
-  font-family: Verdana;
-}
-
-.account a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.account-link {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.account-link:hover {
-  color: #c68c8c;
-  transition: color 0.3s;
-}
-
-.account-link a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.account-link img {
-  margin-right: 5px;
-}
-
-/* -------- end account -------- */
-
-.fullscreen-image {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
   position: relative;
+}
+
+header {
+  position: relative;
+  height: 100vh;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
 }
 
-.fullscreen-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
+header::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom right, #ff66b2, #6699ff); 
-  opacity: 0.7; 
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 94, 0.8), rgba(26, 108, 195, 0.5)), url("https://img.freepik.com/free-photo/closeup-scientist-doctor-looking-into-medical-microscope-analyzing-blood-sample-during-scientific-experiment-biochemistry-laboratory-researcher-man-developing-vaccine-against-covid19_482257-28684.jpg?w=1380&t=st=1702647297~exp=1702647897~hmac=b8678ebf62090d845cd82e836ec13357123d5007f6b84cac1a358cb4da7fc385") no-repeat center center / cover;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.header-text h1 {
+  font-size: 5em;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+}
+.header-text h2 {
+  font-size: 2.5em;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+}
+
+.cta-button {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 90px;
+  font-size: 1.5em;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ae9fbb;
+  color: white;
+  border-color: #ae9fbb;
+}
+
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent; /* Убираем фон для меню */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.menu .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 70px;
+}
+
+.menu nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu nav li {
+  margin-right: 20px;
+}
+
+.menu nav a {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}
+
+.menu .login {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu nav a {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  transition: color 0.3s; 
+}
+
+.menu nav a:hover {
+  color: #ae9fbb;
 }
 
 /* -------- language -------- */
 
 .language-menu {
-  font-family: Verdana;
+  font-family: 'Montserrat', sans-serif;
   position: relative;
   display: inline-block;
+  margin-left: -25%;
 }
 
 .language-toggle {
@@ -146,6 +167,7 @@
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; 
+  margin-right: 50px;
 }
 
 .language-list {
@@ -169,7 +191,170 @@
 }
 
 .language-list a:hover {
-  color: #c68c8c;
+  color: grey;
+}
+
+.language-toggle[data-lang="ru"]:hover {
+  color: #ae9fbb;
 }
 
 /* -------- end language -------- */
+
+/* -------- post_list_block_phototext -------- */
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo {
+  position: relative;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%; /* Задайте ширину .overlay-text, которая вам подходит */
+}
+
+.overlay-text h1 {
+  font-size: 24px; 
+  font-family: Montserrat;
+  margin-left: 10px;
+}
+
+.overlay-text h2 {
+  font-size: 16px; 
+  font-family: Montserrat;
+  color: grey;
+  margin-left: 10px;
+}
+
+.overlay-text h3 {
+  font-size: 16px; 
+  font-family: Montserrat;
+  margin-left: 10px;
+  color: #00f;
+}
+
+.overlay-text h4 {
+  font-size: 16px; 
+  font-family: Montserrat;
+  margin-left: 10px;
+  color: gray;
+}
+
+.overlay-text p {
+  font-family: Nunito;
+  margin-left: 10px; 
+}
+
+.left-block,
+.right-block {
+  flex: 1;
+  padding: 20px; /* Задайте отступы, которые вам подходят */
+  max-width: 300px; /* Максимальная ширина текстовых блоков */
+}
+
+.text {
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: normal;
+  margin: 0;
+  margin-left: 10px; 
+}
+
+.text2 {
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: normal;
+  margin: 0;
+  margin-left: 10px; 
+}
+
+.left-block::before,
+.right-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 10px; /* Ширина полоски */
+  background-color: #00f; /* Цвет полоски (голубой в данном случае) */
+  z-index: 1; /* Устанавливаем z-index, чтобы полоска была над текстом */
+}
+
+.test-headers {
+  display: flex;
+  align-items: baseline;
+}
+
+#narcoTestsText {
+  display: block;
+}
+
+#zpppText {
+  display: none;
+}
+
+.test-headers h4 {
+  margin-right: 20px;
+  cursor: pointer;
+  color: grey; /* Устанавливаем серый цвет по умолчанию */
+  transition: color 0.3s;
+}
+
+.test-headers h4:hover {
+  color: black; /* Черный цвет при наведении */
+}
+
+.test-headers h4.active {
+  color: blue; /* Синий цвет для активного заголовка */
+  position: relative;
+}
+
+.test-headers h4.active::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00f;
+  transition: width 0.3s ease;
+}
+
+.test-headers h4.active:hover::before {
+  width: 0;
+}
+
+.test-headers h4.active:hover::before {
+  width: 0;
+}
+
+/* -------- end post_list_block_phototext -------- */
+
+.account-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.account-link:hover {
+  color: #ae9fbb;
+  transition: color 0.3s;
+}
+
+.account-link a {
+  text-decoration: none;
+  color: inherit;
+}
