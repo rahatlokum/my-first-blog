@@ -38,6 +38,7 @@ header::before {
   font-family: 'Montserrat', sans-serif;
   white-space: nowrap;
 }
+
 .header-text h2 {
   font-size: 2.5em;
   margin: 0;
@@ -45,10 +46,29 @@ header::before {
   white-space: nowrap;
 }
 
+.header-text h1,
+.header-text h2,
+.cta-button {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .cta-button {
   position: absolute;
   bottom: 100px;
-  left: 50%;
+  left: 39%;
   transform: translateX(-50%);
   padding: 15px 90px;
   font-size: 1.5em;
@@ -210,6 +230,14 @@ img {
 
 .photo {
   position: relative;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .overlay-text {
@@ -276,7 +304,13 @@ img {
   word-wrap: break-word;
   white-space: normal;
   margin: 0;
-  margin-left: 10px; 
+  margin-left: 10px;
+  opacity: 0; /* Начальная непрозрачность */
+  transition: opacity 0.5s ease-in-out; /* Длительность и кривая анимации */ 
+}
+
+.text2.visible {
+  opacity: 1; /* Прозрачность при появлении */
 }
 
 .left-block::before,
@@ -358,3 +392,122 @@ img {
   text-decoration: none;
   color: inherit;
 }
+
+/* end accound */
+
+/* ------ hz -------- */
+
+.photo-2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-2 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 10%; /* Измените это значение по вашему усмотрению */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(195, 200, 206, 0), rgba(218, 221, 223, 0.5));
+  z-index: 0;
+}
+
+.blue-line {
+  width: 70px;
+  height: 3px;
+  background-color: #00f;
+  margin: 0 auto 10px;
+}
+
+.second-header-text {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.second-header-text h1 {
+  font-size: 2em;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  color: black;
+}
+
+.second-header-text h2 {
+  font-size: 0.9em;
+  padding-top: 2%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  color: grey;
+}
+
+/* ------ end hz ------ */
+
+/* ------ icons ------- */
+
+.icons-container {
+  position: absolute;
+  top: calc(50% - -50px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.icons-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.icon-container {
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  margin-right: 100px;
+}
+
+.icon-container img {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 0 auto;
+}
+
+.icon-container:last-child {
+  margin-right: 0; /* У последнего блока убираем правый отступ */
+}
+
+/* Для h1 */
+.icon-container h1.text-icon {
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+/* Для h2 */
+.icon-container h2.text-icon {
+  font-size: 13px;
+  font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  color: grey;
+  line-height: 1.7;
+}
+
+
+/* ------ end icons ------- */

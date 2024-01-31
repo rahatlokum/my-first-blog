@@ -7,7 +7,7 @@
     <img src="{% static 'media/doctor.jpg' %}" alt="Doctor Photo">
     <div class="overlay-text">
       <div class="left-block">
-        <h1>Почему медицинское тестирование имеет значение…</h1>
+        <h1>Почему Медицинское Тестирование Имеет Значение…</h1>
         <h2>ПРО НАС</h2>
         <h3>"Быстро, вежливо & так дешево!”</h3>
         <p class="text">
@@ -16,7 +16,7 @@
         </p>
       </div>
       <div class="right-block">
-        <h1>Виды тестов</h1>
+        <h1>Виды Тестов</h1>
         <h2>ЧТО МЫ ПРЕДЛАГАЕМ</h2>
         <div class="test-headers">
           <h4 id="narcoTestsHeader" class="test-header active" onclick="showText(0)">НАРКО-ТЕСТЫ</h4>
@@ -30,6 +30,66 @@
     </div>
   </div>
 
+  <div class="photo-2">
+    <img src="{% static 'media/back3.jpg' %}" alt="Back Photo">
+    <div class="overlay">
+      <div class="second-header-text">
+        <div class="blue-line"></div>
+        <h1>Что Делает Нас Лучшими?</h1>
+        <h2>НАШИ ОСОБЕННОСТИ</h2>
+      </div>
+    </div>
+    <div class="icons-container">
+      <div class="icons-row">
+
+        <!-- Первый горизонтальный ряд -->
+        <div class="icon-container">
+          <img src="{% static 'media/icon1.png' %}" alt="Icon 1">
+          <h1 class="text-icon">ДОСТУПНО</h1>
+          <h2 class="text-icon">Наши цены на медицинские тесты на 25% ниже, чем у конкурентов...</h2>
+        </div>
+        <div class="icon-container">
+          <img src="{% static 'media/icon2.png' %}" alt="Icon 2">
+          <h1 class="text-icon">БЫСТРО</h1>
+          <h2 class="text-icon">Лучшая часть любого тестирования - получение результатов максимально быстро.</h2>
+        </div>
+        <div class="icon-container">
+          <img src="{% static 'media/icon3.png' %}" alt="Icon 3">
+          <h1 class="text-icon">ОПЫТ</h1>
+          <h2 class="text-icon">Почти 4 десятилетия опыта в нашем распоряжении - у нас все под контролем.</h2>
+        </div>
+        <div class="icon-container">
+          <img src="{% static 'media/icon4.png' %}" alt="Icon 4">
+          <h1 class="text-icon">СЕРТИФИЦИРОВАНО</h1>
+          <h2 class="text-icon">Сертифицировано AHD, DJDH и Ассоциацией ATY.</h2>
+        </div>
+      </div>
+
+      <div class="icons-row">
+        <!-- Второй горизонтальный ряд -->
+        <div class="icon-container">
+          <img src="{% static 'media/icon5.png' %}" alt="Icon 5">
+          <h1 class="text-icon">КАЧЕСТВО</h1>
+          <h2 class="text-icon">Рост и изменения - две реальности, которые ни одно предприятие не может проигнорировать.</h2>
+        </div>
+        <div class="icon-container">
+          <img src="{% static 'media/icon6.png' %}" alt="Icon 6">
+          <h1 class="text-icon">ИННОВАЦИИ</h1>
+          <h2 class="text-icon">Мы постоянно ищем инновационные способы улучшения ухода за пациентами.</h2>
+        </div>
+        <div class="icon-container">
+          <img src="{% static 'media/icon7.png' %}" alt="Icon 7">
+          <h1 class="text-icon">СОТРУДНИЧЕСТВО</h1>
+          <h2 class="text-icon">Мы верим в командную работу и безграничные возможности коллективной энергии.</h2>
+        </div>
+        <div class="icon-container">
+          <img src="{% static 'media/icon8.png' %}" alt="Icon 8">
+          <h1 class="text-icon">ГОТОВНОСТЬ 24/7</h1>
+          <h2 class="text-icon">Мы готовы прийти на помощь 24/7. В любой срочной ситуации мы рядом!</h2>
+        </div>
+      </div>
+    </div>
+  
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var narcoTestsHeader = document.getElementById('narcoTestsHeader');
@@ -38,26 +98,46 @@
       var zpppText = document.getElementById('zpppText');
   
       // Скрыть текст ZPPP при загрузке страницы
-      zpppText.style.display = 'none';
+      zpppText.style.opacity = '0';
   
       // Установить активным заголовок по умолчанию
       narcoTestsHeader.classList.add('active');
+      narcoTestsText.style.opacity = '1'; // Показать текст Narco-Tests
   
       // Переключение текста при клике на ZPPP
       zpppHeader.addEventListener('click', function () {
-        narcoTestsText.style.display = 'none';
-        zpppText.style.display = 'block';
+        fadeOut(narcoTestsText);
+        setTimeout(function () {
+          narcoTestsText.style.display = 'none'; // Скрыть текст Narco-Tests после затухания
+          fadeIn(zpppText);
+        }, 300); // Задержка после скрытия предыдущего текста
         zpppHeader.classList.add('active');
         narcoTestsHeader.classList.remove('active');
       });
   
       // Переключение текста при клике на Narco-Tests
       narcoTestsHeader.addEventListener('click', function () {
-        narcoTestsText.style.display = 'block';
-        zpppText.style.display = 'none';
+        fadeOut(zpppText);
+        setTimeout(function () {
+          zpppText.style.display = 'none'; // Скрыть текст ZPPP после затухания
+          fadeIn(narcoTestsText);
+        }, 300); // Задержка после скрытия предыдущего текста
         narcoTestsHeader.classList.add('active');
         zpppHeader.classList.remove('active');
       });
+  
+      function fadeIn(element) {
+        element.style.transition = 'opacity 0.5s';
+        element.style.display = 'block'; // Показать элемент перед появлением
+        setTimeout(function () {
+          element.style.opacity = '1';
+        }, 50); // Задержка перед появлением
+      }
+  
+      function fadeOut(element) {
+        element.style.transition = 'opacity 0.5s';
+        element.style.opacity = '0';
+      }
     });
   </script>
 
