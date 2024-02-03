@@ -13,14 +13,14 @@ header {
   overflow: hidden;
 }
 
-header::before {
+.photo-1::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0, 0, 94, 0.8), rgba(26, 108, 195, 0.5)), url("https://img.freepik.com/free-photo/closeup-scientist-doctor-looking-into-medical-microscope-analyzing-blood-sample-during-scientific-experiment-biochemistry-laboratory-researcher-man-developing-vaccine-against-covid19_482257-28684.jpg?w=1380&t=st=1702647297~exp=1702647897~hmac=b8678ebf62090d845cd82e836ec13357123d5007f6b84cac1a358cb4da7fc385") no-repeat center center / cover;
+  background: linear-gradient(to right, rgba(84, 3, 71, 0.8), rgba(6, 3, 89, 0.5));
 }
 
 .header-text {
@@ -81,9 +81,9 @@ header::before {
 }
 
 .cta-button:hover {
-  background-color: #ae9fbb;
+  background-color: #178FEB;
   color: white;
-  border-color: #ae9fbb;
+  border-color: #178FEB;
 }
 
 
@@ -458,6 +458,7 @@ img {
 /* ------ icons ------- */
 
 .icons-container {
+  margin-top: 3%;
   position: absolute;
   top: calc(50% - -50px);
   left: 50%;
@@ -479,6 +480,14 @@ img {
   width: 200px;
   height: 200px;
   margin-right: 100px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.icon-container.visible {
+  opacity: 1; /* Устанавливаем прозрачность в 1 при появлении */
+  transform: translateY(0); /* Сбрасываем смещение вниз */
 }
 
 .icon-container img {
@@ -492,7 +501,6 @@ img {
   margin-right: 0; /* У последнего блока убираем правый отступ */
 }
 
-/* Для h1 */
 .icon-container h1.text-icon {
   margin-top: 20px;
   font-size: 16px;
@@ -500,7 +508,6 @@ img {
   color: black;
 }
 
-/* Для h2 */
 .icon-container h2.text-icon {
   font-size: 13px;
   font-weight: 100;
@@ -509,5 +516,30 @@ img {
   line-height: 1.7;
 }
 
+/* ------ end icons ------ */
 
-/* ------ end icons ------- */
+/* ------ flask ------ */
+
+.photo-3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-3 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Убедитесь, что псевдоэлемент находится поверх изображения */
+}
+
+/* ------ end flask ------ */

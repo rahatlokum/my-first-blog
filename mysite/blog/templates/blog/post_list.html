@@ -1,7 +1,52 @@
-{% extends 'blog/base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebVitals</title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
 
-{% block content %}
+    <body>
+        <header>
+          <div class="photo-1">
+          <img src="{% static 'media/header-doctor.jpg' %}" alt="Doctor Photo">
+          <div class="header-text">
+            <h2>БЫСТРО, ДОСТУПНО & НАДЕЖНО</h2>
+            <h1>МЕДИЦИНСКАЯ ПОМОЩЬ</h1>
+          </div>
+
+          <button class="cta-button">ЗАПИСАТЬСЯ</button>
+
+            <div class="menu">
+              <div class="logo">WebVitals</div>
+
+                <nav>
+                    <a href="#">ПРО НАС</a>
+                    <a href="#">ДОКТОРА</a>
+                    <a href="#">УСЛУГИ</a>
+                    <a href="#">ОТЗЫВЫ</a>
+                    <a href="#">КОНТАКТЫ</a>
+                </nav>
+
+              <div class="account-link">
+                <svg class="svg-icon" style="width: 1.5em; height: 1.5em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M932.5287967 334.67336355c-60.0304857-142.29721603-187.95440447-244.58456937-339.9724261-271.84676136-152.01802164-27.25434588-307.51011271 24.21806543-413.24172265 136.80366691-40.53866177 44.25124098-61.78478126 76.5958687-90.86874055 141.8845322-2.57495435 18.99283766 45.00599603 37.96998432 54.78329003 16.79290824 24.72018891-53.54367173 32.4356366-64.71279138 77.64562071-119.58081582 76.34480637-81.1228298 179.69289626-125.80401364 291.02475765-125.80401365 220.23312725 0 399.45214362 179.21901636 399.45214361 399.45214362a397.39029731 397.39029731 0 0 1-80.07150736 239.64649365 371.14176884 371.14176884 0 0 0-50.4383491-66.94253483 28.53005388 28.53005388 0 0 0-27.63721569-8.78403038 28.53319233 28.53319233 0 0 0-13.77074836 48.0156009 313.76940146 313.76940146 0 0 1 51.83174277 73.28341956c-72.0893063 70.6441307-170.73155338 114.23947162-279.3676351 114.23947161-108.63922139 0-207.28146845-43.59534213-279.37234398-114.21436526 53.28790292-104.28486512 161.79845408-171.11285275 279.37234398-171.11285396a311.83151772 311.83151772 0 0 1 166.21871408 47.64371566 28.51593209 28.51593209 0 0 0 28.51279363 1.03563142 28.53633077 28.53633077 0 0 0 15.1610048-24.1741296 28.54260767 28.54260767 0 0 0-13.36277342-25.21917516 370.46703931 370.46703931 0 0 0-52.46881336-27.29984971 383.56776702 383.56776702 0 0 0-26.97346951-10.17271759 202.24610699 202.24610699 0 0 0 23.96543386-20.50705545c77.90139073-77.90139073 77.90139073-204.20438941 0-282.10107246-77.90139073-77.90139073-204.19968295-77.90139073-282.1010737 0-77.90139073 77.89668306-77.90139073 204.19968295 0 282.10107246a202.99301593 202.99301593 0 0 0 23.99054022 20.50705545 371.06331133 371.06331133 0 0 0-202.33868508 163.70181734 397.38088319 397.38088319 0 0 1-80.06209202-239.64649365c0-23.71750995 2.08695265-47.39579175 6.24359651-70.74612414 2.59064537-15.42932738-7.72486303-30.06467035-23.12280716-32.81379874-15.39951335-2.74912839-30.13998941 7.4110354-33.04760085 22.78073473A460.77716799 460.77716799 0 0 0 55.3810463 512.37502369c0.13808435 217.13251229 153.15721572 404.13915697 365.96361535 447.24963586C634.15263171 1002.74141411 847.88952966 890.03655775 932.5287967 690.07825427a457.94016795 457.94016795 0 0 0 0-355.41116761v0.00627689zM369.48467408 426.78015317c0-78.52590755 63.88428649-142.41176325 142.41490171-142.41176325 78.52590755 0 142.41019404 63.88585571 142.41019282 142.41176325s-63.88428649 142.41490171-142.41019282 142.41490171c-78.52904479 0-142.41490171-63.89056338-142.41490171-142.41490171z m0 0" fill="" /><path d="M103.32289738 381.38030399a28.53476155 28.53476155 0 0 0 21.84552994-0.35305579 28.49867184 28.49867184 0 0 0 15.19552527-15.70078841 424.94905549 424.94905549 0 0 1 7.9429729-18.65076523c6.79279548-14.86757584 15.37126855-28.80779181 23.04905853-43.23757869 10.86784459-20.4254607 9.06647476-39.25981533-4.35592548-47.50876975-13.42710791-8.25523132-29.49036624-6.02548665-44.25594865 17.62141192-9.904395 15.86083946-18.58486272 32.45760451-26.3489527 49.46705339a473.70372043 473.70372043 0 0 0-9.08687465 21.32928346c-5.79639342 14.64789675 1.37299498 31.22583233 16.01461484 37.0332091z m0 0" fill="" /></svg>
+                <a href="#">ВОЙТИ</a>
+              </div>
+
+                <div class="language-menu">
+                  <button class="language-toggle ru" id="current-language" data-lang="ru">RU</button>
+                    <ul class="language-list">
+                      <li><a href="#" data-lang="en">EN</a></li>
+                      <li><a href="#" data-lang="es">ES</a></li>
+                      <li><a href="#" data-lang="fr">FR</a></li>
+                      <li><a href="#" data-lang="de">DE</a></li>
+                      <li><a href="#" data-lang="it">IT</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </header>
 
   <div class="photo">
     <img src="{% static 'media/doctor.jpg' %}" alt="Doctor Photo">
@@ -31,7 +76,7 @@
   </div>
 
   <div class="photo-2">
-    <img src="{% static 'media/back3.jpg' %}" alt="Back Photo">
+    <img src="{% static 'media/back4.jpg' %}" alt="Back Photo">
     <div class="overlay">
       <div class="second-header-text">
         <div class="blue-line"></div>
@@ -39,6 +84,7 @@
         <h2>НАШИ ОСОБЕННОСТИ</h2>
       </div>
     </div>
+
     <div class="icons-container">
       <div class="icons-row">
 
@@ -88,22 +134,30 @@
           <h2 class="text-icon">Мы готовы прийти на помощь 24/7. В любой срочной ситуации мы рядом!</h2>
         </div>
       </div>
+
     </div>
-  
+  </div>
+
+  <div class="photo-3">
+
+    <img src="{% static 'media/flask7.jpg' %}" alt="Back Photo">
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var narcoTestsHeader = document.getElementById('narcoTestsHeader');
       var zpppHeader = document.getElementById('zpppHeader');
       var narcoTestsText = document.getElementById('narcoTestsText');
       var zpppText = document.getElementById('zpppText');
-  
+      var iconContainers = document.querySelectorAll('.icon-container');
+
       // Скрыть текст ZPPP при загрузке страницы
       zpppText.style.opacity = '0';
-  
+
       // Установить активным заголовок по умолчанию
       narcoTestsHeader.classList.add('active');
       narcoTestsText.style.opacity = '1'; // Показать текст Narco-Tests
-  
+
       // Переключение текста при клике на ZPPP
       zpppHeader.addEventListener('click', function () {
         fadeOut(narcoTestsText);
@@ -114,7 +168,7 @@
         zpppHeader.classList.add('active');
         narcoTestsHeader.classList.remove('active');
       });
-  
+
       // Переключение текста при клике на Narco-Tests
       narcoTestsHeader.addEventListener('click', function () {
         fadeOut(zpppText);
@@ -125,7 +179,7 @@
         narcoTestsHeader.classList.add('active');
         zpppHeader.classList.remove('active');
       });
-  
+
       function fadeIn(element) {
         element.style.transition = 'opacity 0.5s';
         element.style.display = 'block'; // Показать элемент перед появлением
@@ -133,12 +187,35 @@
           element.style.opacity = '1';
         }, 50); // Задержка перед появлением
       }
-  
+
       function fadeOut(element) {
         element.style.transition = 'opacity 0.5s';
         element.style.opacity = '0';
       }
+
+      // Функция, которая добавляет класс visible к элементам, когда они становятся видимыми
+      function showIcons() {
+        iconContainers.forEach(function (iconContainer) {
+          // Проверяем, виден ли элемент на экране
+          if (isElementInViewport(iconContainer)) {
+            iconContainer.classList.add('visible');
+          }
+        });
+      }
+
+      // Функция, которая проверяет, виден ли элемент на экране
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      // Вызываем функцию при загрузке страницы и при прокрутке
+      showIcons();
+      window.addEventListener('scroll', showIcons);
     });
   </script>
-
-{% endblock %}
