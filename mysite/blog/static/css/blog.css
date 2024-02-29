@@ -20,7 +20,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(84, 3, 71, 0.8), rgba(6, 3, 89, 0.5));
+  background: linear-gradient(to right, rgba(168, 89, 155, 0.8), rgba(18, 14, 137, 0.5));
 }
 
 .header-text {
@@ -30,20 +30,27 @@ header {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
+  align-items: center;
 }
 
 .header-text h1 {
-  font-size: 5em;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: 0.01em;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   white-space: nowrap;
 }
 
 .header-text h2 {
-  font-size: 2.5em;
+  font-size: 35px;
+  font-weight: 500;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   white-space: nowrap;
+  margin: 0 0 20px;
+  letter-spacing: 5px;
 }
 
 .header-text h1,
@@ -66,12 +73,17 @@ header {
 }
 
 .cta-button {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.1em;
   position: absolute;
   bottom: 100px;
-  left: 39%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px; /* Измените на нужное вам значение */
   padding: 15px 90px;
-  font-size: 1.5em;
+  font-size: 1em;
   color: white;
   background-color: transparent;
   border: 2px solid white;
@@ -86,6 +98,12 @@ header {
   border-color: #178FEB;
 }
 
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  padding: 20px;
+}
 
 .menu {
   position: absolute;
@@ -96,29 +114,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-}
-
-.menu .logo {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: 70px;
+  padding: 3%;
+  padding-left: 35%;
 }
 
 .menu nav ul {
   list-style: none;
   display: flex;
-}
-
-.menu nav li {
-  margin-right: 20px;
-}
-
-.menu nav a {
-  text-decoration: none;
-  color: white;
-  margin-right: 20px;
 }
 
 .menu .login {
@@ -128,15 +130,64 @@ header {
 }
 
 .menu nav a {
+  position: relative;
   text-decoration: none;
   color: white;
   margin-right: 20px;
-  transition: color 0.3s; 
+  transition: color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em; 
 }
 
-.menu nav a:hover {
-  color: #ae9fbb;
+.menu nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1.2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
+
+.menu nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.logo-container img {
+  width: 50%;
+  height: auto; 
+}
+
+/* -------- account -------- */
+
+.account-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 100px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.account-link:hover {
+  color: #00bfff;
+  transition: color 0.3s;
+}
+
+.account-link a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.account-link svg {
+  vertical-align: middle;
+  margin-right: 5px; /* Отступ между значком и текстом */
+}
+
+/* -------- end account -------- */
 
 /* -------- language -------- */
 
@@ -144,28 +195,7 @@ header {
   font-family: 'Montserrat', sans-serif;
   position: relative;
   display: inline-block;
-  margin-left: -25%;
-}
-
-.language-toggle {
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s; 
-}
-
-.language-list {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  z-index: 1;
+  margin-left: -35%;
 }
 
 .language-list li {
@@ -181,6 +211,8 @@ header {
 }
 
 .language-toggle {
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
   background-color: transparent;
   color: #fff;
   border: none;
@@ -191,6 +223,7 @@ header {
 }
 
 .language-list {
+  font-family: 'Montserrat', sans-serif;
   display: none;
   position: absolute;
   background-color: #fff;
@@ -211,11 +244,11 @@ header {
 }
 
 .language-list a:hover {
-  color: grey;
+  color: #00bfff;
 }
 
 .language-toggle[data-lang="ru"]:hover {
-  color: #ae9fbb;
+  color: #00bfff;
 }
 
 /* -------- end language -------- */
@@ -240,7 +273,7 @@ img {
   display: block;
 }
 
-.overlay-text {
+.first-text {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -249,37 +282,37 @@ img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 80%; /* Задайте ширину .overlay-text, которая вам подходит */
+  width: 80%; /* Задайте ширину .first-text, которая вам подходит */
 }
 
-.overlay-text h1 {
+.first-text h1 {
   font-size: 24px; 
   font-family: Montserrat;
   margin-left: 10px;
 }
 
-.overlay-text h2 {
+.first-text h2 {
   font-size: 16px; 
   font-family: Montserrat;
   color: grey;
   margin-left: 10px;
 }
 
-.overlay-text h3 {
+.first-text h3 {
   font-size: 16px; 
   font-family: Montserrat;
   margin-left: 10px;
   color: #00f;
 }
 
-.overlay-text h4 {
+.first-text h4 {
   font-size: 16px; 
   font-family: Montserrat;
   margin-left: 10px;
   color: gray;
 }
 
-.overlay-text p {
+.first-text p {
   font-family: Nunito;
   margin-left: 10px; 
 }
@@ -374,26 +407,6 @@ img {
 }
 
 /* -------- end post_list_block_phototext -------- */
-
-.account-link {
-  color: white;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-right: 50px;
-}
-
-.account-link:hover {
-  color: #ae9fbb;
-  transition: color 0.3s;
-}
-
-.account-link a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* end accound */
 
 /* ------ hz -------- */
 
@@ -528,18 +541,107 @@ img {
 .photo-3 img {
   width: 100%;
   height: auto;
-  object-fit: cover;
   display: block;
 }
 
-.photo-3::after {
-  content: "";
+/* ------ end flask ------ */
+
+/* ------ third photo ------ */
+
+.second-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1; /* Убедитесь, что псевдоэлемент находится поверх изображения */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);}
+
+.third-header-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
 }
 
-/* ------ end flask ------ */
+.third-header-text h1 {
+  font-size: 1.7em;
+  margin: 0;
+  margin-top: 5%;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  color: #51565c;
+  margin-left: 1%;
+}
+
+.third-header-text h2 {
+  font-size: 110px;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  color: #178FEB;
+  letter-spacing: -1px;
+}
+
+.second-button {
+  position: absolute;
+  bottom: 32%;
+  left: 22.4%;
+  padding: 15px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: #178FEB;
+  border: 2px solid #178FEB; /* rgb(60, 60, 255); */
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.second-button:hover {
+  background-color: #51565c;
+  border-color: #51565c;
+}
+
+/* ------ end third photo ------ */
+
+/* ------ footer ------  */
+
+footer {
+  font-size: 0.8em;
+  background-color: #333; /* Темно-серый цвет футера */
+  color: #fff; /* Белый цвет текста */
+  padding: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+}
+
+.footer-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.footer-item svg {
+  margin-right: 5px; /* Пример отступа между SVG и текстом */
+}
+
+.footer-item:first-child {
+  margin-left: 7%; /* Пример отступа в 7% */
+}
+
+.footer-item:last-child {
+  margin-right: 7%; /* Пример отступа в 7% */
+}
+
+/* ------ end footer ------  */
